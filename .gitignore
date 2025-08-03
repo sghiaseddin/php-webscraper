@@ -1,0 +1,33 @@
+# Ignore dependency directories
+/vendor/
+
+# Ignore logs and runtime data
+/log/
+*.log
+
+# Ignore configuration files that store environment secrets
+/config/config.json
+
+# Ignore OS and editor clutter
+.DS_Store
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore Composer cache
+composer.phar
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore output folders (optional depending on your config)
+/storage/
+
+# Ignore CI/CD operations
+/ci_cd/
+
+# Ignore web-server configs
+.user.ini
+.htaccess

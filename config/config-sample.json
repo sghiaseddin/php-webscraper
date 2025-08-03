@@ -1,0 +1,31 @@
+{
+    "db": {
+      "host": "your-database-host",
+      "user": "your-db-username",
+      "pass": "your-db-password",
+      "name": "your-database-name",
+      "charset": "utf8mb4"
+    },
+    "crawler": {
+      "timeout": 10,
+      "interval": 1.5,
+      "user_agent": "YourCrawlerBot/1.0"
+    },
+    "sources": [
+      {
+        "domain": "example.com",
+        "sitemaps": {
+          "https://example.com/sitemap1.xml": {
+            "selector": ["your-css-selector"],
+            "exclusion": ["css-selector-to-exclude-from-the-output"],
+            "table_operation": 1 // 0 or 1 switch to repeat <table> headers for each row
+          }
+        }
+      }
+    ],
+    "storage_path": "relative/or/absolute/path/to/save/",
+    "aggregated_file": "relative/or/absolute/path/to/save/all_knowledge.txt",
+    "aggregated_chunk_size": 1000, // Kilobyte
+    "copyright_text": "Copyright text to put in the aggregated_file"
+  }
+  
