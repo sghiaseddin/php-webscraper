@@ -2,8 +2,8 @@
 
 This is a lightweight, configurable web scraper built with PHP and powered by [Symfony DomCrawler](https://symfony.com/doc/current/components/dom_crawler.html) and [CSSSelector](https://symfony.com/doc/current/components/css_selector.html). It can crawl multiple sitemaps, extract content based on CSS selectors, and store the results as plain text files.
 
-Version: 1.0.0
-Tag: Tested and Operational
+Version: 1.0.1
+Tag: Database Documentation
 
 ## Features
 
@@ -68,13 +68,23 @@ webscraper/
 ## Installation
 
 ```bash
-git clone https://github.com/sghiaseddin/webscraper.git
+git clone https://github.com/sghiaseddin/php-webscraper.git
 cd webscraper
 composer install
 cp config/config-sample.json config/config.json
 ```
 
-Then, edit config/config.json with your actual domains, selectors, and storage paths.
+You must create a MySQL database and user, then supply those credentials in config/config.json. Example using the MySQL CLI:
+
+```sql
+-- Log into MySQL as admin, then run:
+CREATE DATABASE webscraper CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'scraper_user'@'localhost' IDENTIFIED BY 'strong_password';
+GRANT ALL PRIVILEGES ON webscraper.* TO 'scraper_user'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+Then, edit config/config.json with your actual database details, domains, selectors, and storage paths.
 
 ## Usage
 
